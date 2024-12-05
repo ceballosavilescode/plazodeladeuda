@@ -17,7 +17,7 @@ class Database(object):
 		
 	def parse_Excel(self):
 		devengo = pd.DataFrame()
-		for f in glob.glob(archivo): # "../mejorninez/input_excel/pagoManual/*",
+		for f in glob.glob("../interfaz/input_excel/pagoManual/*"): # "../mejorninez/input_excel/pagoManual/*",
 			df = pd.read_excel(f, converters={ 'folio': str, 'Nº CDP': str, 'Monto Total': int } )
 			print('Procesando  : ', f)
 			devengo = pd.concat([devengo, df], ignore_index=True)
