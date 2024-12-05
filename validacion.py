@@ -1,4 +1,4 @@
-print(f"el usuario se registro como 03 : {{ usuario }}")
+print(f"el usuario se registro como 04 : {{ usuario }}")
 
 # Variable usuario
 usuario1 = {{ usuario }}
