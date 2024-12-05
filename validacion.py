@@ -1,33 +1,33 @@
 print(f"el usuario se registro como : {{ usuario }}")
 
+if usuario == 'ceballos':
+	devengo = pd.DataFrame()
+	for f in glob.glob("../interfaz/input_excel/pagoManual/*"): # "../mejorninez/input_excel/pagoManual/*",
+		df = pd.read_excel(f, engine='openpyxl', converters={'folio': str, 'Nº CDP': str, 'Monto Total': int})
+		print('Procesando  : ', f)
+		devengo = pd.concat([devengo, df], ignore_index=True)
 
-devengo = pd.DataFrame()
-for f in glob.glob("../interfaz/input_excel/pagoManual/*"): # "../mejorninez/input_excel/pagoManual/*",
-	df = pd.read_excel(f, engine='openpyxl', converters={'folio': str, 'Nº CDP': str, 'Monto Total': int})
-	print('Procesando  : ', f)
-	devengo = pd.concat([devengo, df], ignore_index=True)
+	devengo['CodProyecto']  =  devengo['Cod. Proyecto']
+	devengo['MesAtencion']  =  devengo['Mes Atención']
+	devengo['Estatus']  	=  "Pendiente"
+	devengo['Diferencia']  	=  "Pendiente"
+	del devengo['observacion']  
 
-devengo['CodProyecto']  =  devengo['Cod. Proyecto']
-devengo['MesAtencion']  =  devengo['Mes Atención']
-devengo['Estatus']  	=  "Pendiente"
-devengo['Diferencia']  	=  "Pendiente"
-del devengo['observacion']  
+	print(devengo)
 
-print(devengo)
+	metadata = sqlalchemy.MetaData()
+	engine = sqlalchemy.create_engine('sqlite:///DBGITHUB.db', echo=False)
+	metadata = sqlalchemy.MetaData()
 
-metadata = sqlalchemy.MetaData()
-engine = sqlalchemy.create_engine('sqlite:///DBGITHUB.db', echo=False)
-metadata = sqlalchemy.MetaData()
+	Asigfe = sqlalchemy.Table(
+		'CodProyectos',
+		metadata,
+		sqlalchemy.Column('id', sqlalchemy.Integer, primary_key=True),
+		sqlalchemy.Column('folio', sqlalchemy.String),
+		sqlalchemy.Column('Estatus', sqlalchemy.String)
+	)
 
-Asigfe = sqlalchemy.Table(
-	'CodProyectos',
-	metadata,
-	sqlalchemy.Column('id', sqlalchemy.Integer, primary_key=True),
-	sqlalchemy.Column('folio', sqlalchemy.String),
-	sqlalchemy.Column('Estatus', sqlalchemy.String)
-)
-
-metadata.create_all(engine)
-devengo.to_sql('CodProyectos', engine, if_exists='replace')
-
-
+	metadata.create_all(engine)
+	devengo.to_sql('CodProyectos', engine, if_exists='replace')
+else:
+	print("============== NO PUSISTE LA PALABRA CORRECTA ==============")
