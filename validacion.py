@@ -4,37 +4,3 @@ print(f"el usuario se registro como 07 : {{ usuario }}")
 usuario1 = {{ usuario }}
 
 print(f"El usuario se registró como: ", usuario1)
-
-if usuario1 == 'ceballos':
-
-
-	devengo = pd.DataFrame()
-	for f in glob.glob("../interfaz/input_excel/pagoManual/*"): # "../mejorninez/input_excel/pagoManual/*",
-		df = pd.read_excel(f, engine='openpyxl', converters={'folio': str, 'Nº CDP': str, 'Monto Total': int})
-		print('Procesando  : ', f)
-		devengo = pd.concat([devengo, df], ignore_index=True)
-
-	devengo['CodProyecto']  =  devengo['Cod. Proyecto']
-	devengo['MesAtencion']  =  devengo['Mes Atención']
-	devengo['Estatus']  	=  "Pendiente"
-	devengo['Diferencia']  	=  "Pendiente"
-	del devengo['observacion']  
-
-	print(devengo)
-
-	metadata = sqlalchemy.MetaData()
-	engine = sqlalchemy.create_engine('sqlite:///DBGITHUB.db', echo=False)
-	metadata = sqlalchemy.MetaData()
-
-	Asigfe = sqlalchemy.Table(
-		'CodProyectos',
-		metadata,
-		sqlalchemy.Column('id', sqlalchemy.Integer, primary_key=True),
-		sqlalchemy.Column('folio', sqlalchemy.String),
-		sqlalchemy.Column('Estatus', sqlalchemy.String)
-	)
-
-	metadata.create_all(engine)
-	devengo.to_sql('CodProyectos', engine, if_exists='replace')
-else:
-	print("============== NO PUSISTE LA PALABRA CORRECTA ==============")
