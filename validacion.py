@@ -1,4 +1,4 @@
-print(f"el usuario se registro como : {{ usuario }}")
+print(f"el usuario se registro como 01 : {{ usuario }}")
 
 if {{ usuario }} == 'ceballos':
 	devengo = pd.DataFrame()
