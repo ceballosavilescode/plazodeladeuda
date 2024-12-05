@@ -16,7 +16,6 @@ if usuario1 == 'ceballos':
 	elif os.name == "posix":  # macOS o Linux
 	os.system(f"open {url}")
 
-	
 	devengo = pd.DataFrame()
 	for f in glob.glob("../interfaz/input_excel/pagoManual/*"): # "../mejorninez/input_excel/pagoManual/*",
 		df = pd.read_excel(f, engine='openpyxl', converters={'folio': str, 'Nº CDP': str, 'Monto Total': int})
