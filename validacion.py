@@ -1,6 +1,7 @@
-print(f"el usuario se registro como 07 : {{ usuario }}")
+print(f"El usuario se registró como 08: {usuario}")
 
 # Variable usuario
-usuario1 = {{ usuario }}
+usuario1 = usuario
 
-print(f"El usuario se registró como: ", usuario1)
+# Imprimir el nombre del usuario
+print(f"El usuario se registró como: {usuario1}")
