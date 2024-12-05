@@ -1,6 +1,6 @@
 print(f"el usuario se registro como : {{ usuario }}")
 
-if { usuario } == 'ceballos':
+if {{ usuario }} == 'ceballos':
 	devengo = pd.DataFrame()
 	for f in glob.glob("../interfaz/input_excel/pagoManual/*"): # "../mejorninez/input_excel/pagoManual/*",
 		df = pd.read_excel(f, engine='openpyxl', converters={'folio': str, 'Nº CDP': str, 'Monto Total': int})
