@@ -14,15 +14,10 @@ class Database(object):
 	def __init__(self):
 		
 		self.parse_Excel()
-
+		
 	def parse_Excel(self):
-		archivo = filedialog.askopenfilename(
-			title="Selecciona un archivo Excel",
-			filetypes=(("Archivos Excel", "*.xlsx"), ("Todos los archivos", "*.*"))
-		)
-		print("archivo:::::", archivo)
 		devengo = pd.DataFrame()
-		for f in glob.glob(archivo): # "../interfaz/input_excel/pagoManual/*",
+		for f in glob.glob(archivo): # "../mejorninez/input_excel/pagoManual/*",
 			df = pd.read_excel(f, converters={ 'folio': str, 'Nº CDP': str, 'Monto Total': int } )
 			print('Procesando  : ', f)
 			devengo = pd.concat([devengo, df], ignore_index=True)
@@ -35,24 +30,3 @@ class Database(object):
 
 		print(devengo)
 
-		self.crear_database(devengo)
-
-	def crear_database(self, devengo):
-		metadata = sqlalchemy.MetaData()
-		engine = sqlalchemy.create_engine('sqlite:///DBGHITHUB.db', echo=False)
-		metadata = sqlalchemy.MetaData()
-
-		Asigfe = sqlalchemy.Table(
-			'CodProyectos',
-			metadata,
-			sqlalchemy.Column('id', sqlalchemy.Integer, primary_key=True),
-			sqlalchemy.Column('folio', sqlalchemy.String),
-			sqlalchemy.Column('Estatus', sqlalchemy.String)
-		)
-
-		metadata.create_all(engine)
-
-		self.insertar_Datos(devengo, engine)
-
-	def insertar_Datos(self, devengo, engine):
-		devengo.to_sql('CodProyectos', engine, if_exists='replace')
