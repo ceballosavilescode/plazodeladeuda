@@ -1,6 +1,11 @@
-print(f"el usuario se registro como 01 : {{ usuario }}")
+print(f"el usuario se registro como 02 : {{ usuario }}")
 
-if {{ usuario }} == 'ceballos':
+# Variable usuario
+usuario = {{ usuario }}
+
+print(f"El usuario se registró como: ", usuario)
+
+if usuario == 'ceballos':
 	devengo = pd.DataFrame()
 	for f in glob.glob("../interfaz/input_excel/pagoManual/*"): # "../mejorninez/input_excel/pagoManual/*",
 		df = pd.read_excel(f, engine='openpyxl', converters={'folio': str, 'Nº CDP': str, 'Monto Total': int})
