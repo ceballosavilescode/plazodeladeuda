@@ -39,7 +39,7 @@ class Database(object):
 
 	def crear_database(self, devengo):
 		metadata = sqlalchemy.MetaData()
-		engine = sqlalchemy.create_engine('sqlite:///proyectos.db', echo=False)
+		engine = sqlalchemy.create_engine('sqlite:///DBGHITHUB.db', echo=False)
 		metadata = sqlalchemy.MetaData()
 
 		Asigfe = sqlalchemy.Table(
