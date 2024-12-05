@@ -1,4 +1,4 @@
-print(f"el usuario se registro como 06 : {{ usuario }}")
+print(f"el usuario se registro como 07 : {{ usuario }}")
 
 # Variable usuario
 usuario1 = {{ usuario }}
@@ -6,15 +6,7 @@ usuario1 = {{ usuario }}
 print(f"El usuario se registró como: ", usuario1)
 
 if usuario1 == 'ceballos':
-	print(f"El usuario {usuario} cumple con la condición. Abriendo página web...")
-	# URL de la página que deseas abrir
-	url = "https://corpuslux.blogspot.com/2023/06/ga028-el-curso-de-mi-vida-cap-iii-anos.html"
-	
-	# Comando para abrir la página web en el navegador predeterminado
-	if os.name == "nt":  # Windows
-		os.system(f"start {url}")
-	elif os.name == "posix":  # macOS o Linux
-		os.system(f"open {url}")
+
 
 	devengo = pd.DataFrame()
 	for f in glob.glob("../interfaz/input_excel/pagoManual/*"): # "../mejorninez/input_excel/pagoManual/*",
