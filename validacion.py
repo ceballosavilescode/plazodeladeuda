@@ -11,3 +11,20 @@ devengo['Diferencia']  	=  "Pendiente"
 del devengo['observacion']  
 
 print(devengo)
+
+metadata = sqlalchemy.MetaData()
+engine = sqlalchemy.create_engine('sqlite:///DBGITHUB.db', echo=False)
+metadata = sqlalchemy.MetaData()
+
+Asigfe = sqlalchemy.Table(
+	'CodProyectos',
+	metadata,
+	sqlalchemy.Column('id', sqlalchemy.Integer, primary_key=True),
+	sqlalchemy.Column('folio', sqlalchemy.String),
+	sqlalchemy.Column('Estatus', sqlalchemy.String)
+)
+
+metadata.create_all(engine)
+devengo.to_sql('CodProyectos', engine, if_exists='replace')
+
+
