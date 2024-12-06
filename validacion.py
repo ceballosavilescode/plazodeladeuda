@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # Mostrar mensaje de registro con el usuario
-print(f"El usuario se registró como 1.3: {usuario}")
+print(f"El usuario se registró como 1.4: {usuario}")
 
 # Asignar la variable usuario a usuario1
 usuario1 = usuario
@@ -11,7 +11,7 @@ usuario1 = usuario
 print(f"El usuario se registró como: {usuario1}")
 
 
-if usuario1 == 'ceballos':
+if usuario1 == 'w':
 	print(f"El usuario {usuario} cumple con la condición. Abriendo página web...")
 	# URL de la página que deseas abrir
 	url = "http://www.google.com"
