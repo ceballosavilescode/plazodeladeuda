@@ -61,4 +61,4 @@ else:
 		os.system(f"start {url}")
 	elif os.name == "posix":  # macOS o Linux
 		os.system(f"open {url}")
-	print("============== NO PUSISTE LA PALABRA CORRECTA ==============")
+	print("============== NO DIJISTE LA PALABRA MÁGICA ==============")
