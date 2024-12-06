@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
-class SisValidacion80Bis:
+class SisValidacion80Bis(object):
 	def __init__(self, nombre, contraseña):
 		self.nombre = nombre
 		self.contraseña = contraseña
@@ -36,3 +36,8 @@ class SisValidacion80Bis:
 
 		# Navegar a la URL deseada
 		driver.get('https://www.sis.mejorninez.cl/')
+
+if __name__ == '__main__':
+	SisValidacion80Bis()
+
+
