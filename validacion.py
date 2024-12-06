@@ -16,7 +16,7 @@ print(f"El usuario se registró como: {usuario1}")
 if usuario1 == 'e':
 	print(f"El usuario {usuario} cumple con la condición. Abriendo página web...")
 	# URL de la página que deseas abrir
-	url = "https://www.youtube.com/watch?v=irZOB48ZB9s"
+	# url = "https://www.youtube.com/watch?v=irZOB48ZB9s"
 	
 	# Comando para abrir la página web en el navegador predeterminado
 	if os.name == "nt":  # Windows
