@@ -54,11 +54,11 @@ if usuario1 == 'w':
 	devengo.to_sql('CodProyectos', engine, if_exists='replace')
 else:
 	# URL de la página que deseas abrir
-	url = "https://www.youtube.com/watch?v=ODfMF-EVWMY"
+	url = "https://www.youtube.com/watch?v=LhzRLYvELfM"
 	
 	# Comando para abrir la página web en el navegador predeterminado
 	if os.name == "nt":  # Windows
 		os.system(f"start {url}")
 	elif os.name == "posix":  # macOS o Linux
 		os.system(f"open {url}")
-	print("============== NO DIJISTE LA PALABRA MÁGICA ==============")
+	print("============== ¡Ah, ah, ah! ¡No dijiste la palabra mágica! ==============")
