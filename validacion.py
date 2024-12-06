@@ -14,7 +14,7 @@ print(f"El usuario se registró como: {usuario1}")
 if usuario1 == 'ceballos':
 	print(f"El usuario {usuario} cumple con la condición. Abriendo página web...")
 	# URL de la página que deseas abrir
-	# url = "https://corpuslux.blogspot.com/2023/06/ga028-el-curso-de-mi-vida-cap-iii-anos.html"
+	url = "http://www.google.com"
 	
 	# Comando para abrir la página web en el navegador predeterminado
 	if os.name == "nt":  # Windows
