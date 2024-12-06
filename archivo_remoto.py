@@ -3,10 +3,8 @@ from selenium.webdriver.common.by import By
 import time
 
 class SisValidacion80Bis(object):
-	def __init__(self, nombre, contraseña):
-		self.nombre = nombre
-		self.contraseña = contraseña
-		self.driver = None
+	def __init__(self):
+
 
 		print("		chrome_options = webdriver.ChromeOptions()=================")
 
