@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # Mostrar mensaje de registro con el usuario
-print(f"El usuario se registró como 1.2: {usuario}")
+print(f"El usuario se registró como 1.3: {usuario}")
 
 # Asignar la variable usuario a usuario1
 usuario1 = usuario
