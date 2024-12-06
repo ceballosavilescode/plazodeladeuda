@@ -1,5 +1,3 @@
-import os
-
 # Mostrar mensaje de registro con el usuario
 print(f"El usuario se registró como 1.2: {usuario}")
 
