@@ -198,8 +198,6 @@ class SisValidacion80Bis(Fuente):
 		# ===================================================================================
 
 	def __init__(self):
-		print("		chrome_options = webdriver.ChromeOptions()=================")
-
 		# Ruta al archivo chromedriver
 		chromedriver_path = '/Users/hector/Documents/Documents/desarrollo/convenios_y_transferencias/webdriver/chromedriver'
 
